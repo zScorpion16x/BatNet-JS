@@ -6,6 +6,8 @@
 <hr>
 <div align="center">
     <img src="https://img.shields.io/github/languages/top/zScorpion16x/BatNet-JS?color=%23000000">
+    <img src="https://img.shields.io/github/stars/zScorpion16x/BatNet-JS?color=%23000000&logoColor=%23000000">
+    <img src="https://img.shields.io/github/commit-activity/w/zScorpion16x/BatNet-JS?color=%23000000">
 </div>
 
 <hr>
