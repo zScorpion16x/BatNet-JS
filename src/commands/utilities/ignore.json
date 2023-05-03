@@ -1,0 +1,8 @@
+{
+     "server_name": "SERVER NAME",
+     "nuke_channel": "NUKE CHANNEL",
+     "raid_channel": "RAID CHANNEL",
+     "webhook_url": "WEBHOOK",
+     "server_logo": "SERVER LOGO",
+     "role_name": "ROLE NAME"
+}
