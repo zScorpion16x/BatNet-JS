@@ -1,9 +1,11 @@
 <div align="center">
     <img src="banner.jpg">
-    <img src="https://img.shields.io/github/languages/top/zScorpion16x/BatNet-JS?color=%0x0000">
-    <img src="https://img.shields.io/github/stars/zScorpion16x/BatNet-JS?color=%0x0000&logoColor=%0x0000">
     <p><i>A powerful Discord Raid Bot written in Node.JS</i></p>
     <h5><a href="https://discord.gg/DeathTeam">Discord</a></h5>
+</div>
+<hr>
+<div align="center">
+    <img src="https://img.shields.io/github/languages/top/zScorpion16x/BatNet-JS?color=%23000000">
 </div>
 
 <hr>
