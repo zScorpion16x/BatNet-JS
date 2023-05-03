@@ -22,3 +22,28 @@
 <hr>
 <h3>Screenshot</h3>
 <img src="batnet.jpg">
+<hr>
+<h3>Setup</h3>
+<p>To setup the bot, go to <i>config.json</i> and <i>ignore.json</i> and set the bot's configuration</p>
+<h4>Example</h4>
+<p><code>config.json</code></p>
+
+```json
+{
+     "token": "TOKEN HERE",
+     "prefix": "PREFIX HERE"
+}
+```
+
+<p><code>ignore.json</code></p>
+
+```json
+{
+     "server_name": "SERVER NAME",
+     "nuke_channel": "NUKE CHANNEL",
+     "raid_channel": "RAID CHANNEL",
+     "webhook_url": "WEBHOOK",
+     "server_logo": "SERVER LOGO",
+     "role_name": "ROLE NAME"
+}
+```
