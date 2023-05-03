@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "discord.js": "12.5",
+    "node-fetch": "^2.0.0"
+  }
+}
