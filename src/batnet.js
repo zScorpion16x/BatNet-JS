@@ -6,6 +6,7 @@ const { readdirSync } = require('fs');
 ////// VARIABLES //////
 
 const config = require('./config/config.json');
+const premium = require('./commands/utilities/premium.json')
 const util = require('./commands/utilities/ignore.json');
 const blacklist = require('./commands/utilities/blacklist.json');
 const emojis = require('./commands/utilities/emojis.json');
@@ -38,6 +39,23 @@ batnet.on('ready', () => {
      console.log(chalk.blue(`[ BATNET ] The config have been loaded`));
      console.log(chalk.blue(`[ BATNET ] The premium list have been loaded`));
      console.log(chalk.blue(`[ BATNET ] The blacklist have been loaded`));
+
+     /*
+     "server_name": "SERVER NAME",
+     "nuke_channel": "NUKE CHANNEL",
+     "raid_channel": "RAID CHANNEL",
+     "webhook_url": "WEBHOOK",
+     "server_logo": "SERVER LOGO",
+     "role_name": "ROLE NAME"
+     */
+
+     if (util.nuke_channel === "NUKE CHANNEL" && util.raid_channel === "RAID CHANNEL" && util.server_logo === "SERVER LOGO" && util.server_name === "SERVER NAME" && util.webhook_url === "WEBHOOK" && util.role_name === "ROLE NAME") {
+          console.log(chalk.yellow(`\n[ BATNET ] Warning: The configuration file 'commands/utilities/ignore.json' has unconfigured values.\n`));
+     } 
+     if (premium.ids.length === 0) {
+          console.log(chalk.yellow(`\n[ BATNET ] Warning: The configuration file 'commands/utilities/premium.json' does not have any added ids.\n`));
+     }
+
      
      batnet.user.setPresence({
           status: 'dnd',

