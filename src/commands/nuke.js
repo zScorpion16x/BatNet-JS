@@ -86,9 +86,7 @@ async execute(client, message, args){
           });
       
       message.guild.setName(util.server_name !== "SERVER NAME" ? util.server_name : "OwnedByDT");
-      // [ Lierx ] Asi se ve mejor si a alguien se le olvida configurar todo o le da paja
-      message.guild.setIcon(util.server_logo !== "SERVER LOGO" ? util.server_logo : "https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless")
-      // [ Lierx ] Si el valor de util.server_logo !== "SERVER LOGO" ? util.server_logo : "https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless" es igual a "SERVER LOGO", osea el valor Default, para evitar errores lo reemplaza por una url valida.
+      message.guild.setIcon(util.server_logo !== "SERVER LOGO" ? util.server_logo : "https://cdn.discordapp.com/emojis/1091519096291590174.gif?v=1&size=48&quality=lossless");
      }, 5000);
 }
 }
