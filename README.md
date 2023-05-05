@@ -52,6 +52,7 @@
 }
 ```
 
+<hr>
 <h3>Special Mentions</h3>
 <h4><a href="https://github.com/Lierx">Lierx</a></h4>
 <p>• Fixed bugs</p>
