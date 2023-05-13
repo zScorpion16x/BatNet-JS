@@ -1,7 +1,7 @@
 <div align="center">
     <img src="banner.jpg">
     <p><i>A powerful Discord Raid Bot written in Node.JS</i></p>
-    <h5><a href="https://discord.gg/DeathTeam">Discord</a></h5>
+    <h5><a href="https://discord.gg/QqSds9fVwR">Discord</a></h5>
 </div>
 <hr>
 <div align="center">
